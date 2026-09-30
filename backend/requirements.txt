@@ -6,3 +6,6 @@ python-multipart
 pymongo
 python-dotenv
 cloudinary
+python-jose[cryptography]
+passlib[bcrypt]
+email-validator

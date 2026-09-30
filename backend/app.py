@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from auth.routes import router as auth_router
 from database.db import predictions 
 from datetime import datetime
 from fastapi import UploadFile
@@ -24,6 +25,8 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+app.include_router(auth_router)
 
 @app.get("/")
 def home():

@@ -25,6 +25,11 @@ fs = gridfs.GridFS(db)
 predictions = db["predictions"]
 users = db["users"]
 
+users.create_index(
+    "email",
+    unique=True
+)
+
 
 
 
